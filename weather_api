@@ -1,0 +1,16 @@
+const url = 'https://weather338.p.rapidapi.com/locations/search?query=Los%20Angeles&language=en-US';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '08ef7c1011mshe6e2c1e525a69f2p18bd5cjsnfc30fa318fb4',
+		'X-RapidAPI-Host': 'weather338.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}

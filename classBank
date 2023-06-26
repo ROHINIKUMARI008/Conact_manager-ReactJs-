@@ -1,0 +1,56 @@
+class Bank {
+  constructor(balance) {
+    this.balance = balance
+  }
+  
+  withdraw(amount) {
+    // guard clause
+    if (this.balance - amount <= 0) {
+      console.log('❌ You cannot withdraw more than what you have!')
+      console.log({balance: this.balance})
+      return
+    }
+    
+    this.balance -= amount
+    console.log('withdrew', `$${amount}`)
+    console.log({balance: this.balance})
+  }
+
+  deposit(amount) {
+    this.balance += amount
+    console.log('deposited', `$${amount}`)
+    console.log({balance: this.balance})
+  }
+}
+
+const qaziChecking = new Bank(0)
+console.log(qaziChecking.balance)
+// qaziChecking.deposit(10000)
+// qaziChecking.deposit(10000)
+// qaziChecking.deposit(10000)
+// qaziChecking.withdraw(1000)
+// qaziChecking.withdraw(20000)
+// qaziChecking.withdraw(5000)
+// qaziChecking.withdraw(5000)
+// console.log(qaziChecking.balance)
+
+
+const depositbutton= document.getElementById('deposit')
+const withrawbutton= document.getElementById('withdraw')
+const amtInput = document.getElementById('amount')
+ const bal= document.getElementById('balance')
+
+ 
+
+depositbutton.onclick = () => {
+    const amt= Number(amtInput.value)
+   qaziChecking.deposit(amt)
+   bal.innerText = `Balance : ${qaziChecking.balance}`
+}
+
+withrawbutton.onclick = () => {
+    const amt= Number(amtInput.value)
+    qaziChecking.withdraw(amt)
+    bal.innerText=`balance : ${qaziChecking.balance}`
+ }
+

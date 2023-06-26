@@ -1,0 +1,101 @@
+
+
+// classes are very similar to object
+class Car {
+  constructor(name, color, speed) {
+    //properties
+    this.name = name;
+    this.color = color;
+    this.speed = speed;
+    this.currSpeed =0;
+  }
+
+  drive(speed=10) {
+   // console.log("You drove 2 miles ")
+    this.currSpeed +=10; 
+    console.log(`driving spped at ${this.currSpeed} mph`)
+  }
+  brake() {
+    console.log("Breakkkkk ")
+    this.currSpeed -= 10
+  }
+
+  stop(){
+    console.log('coming to a screening halt')
+   this.currSpeed = 0; }
+
+   getCurrentSpeed() {
+    return currentSpeed
+  }
+  zeroTosixty(){
+    setTimeout(() => {
+        console.log(`This was so fast!`)
+        this.currSpeed = 60;
+        console.log(porsche.currSpeed)  
+    })
+  }
+}
+
+// const ferrari = new Car('ferrari', 'red', 250)
+// ferrari.drive();
+// ferrari.drive();
+// ferrari.drive();
+// ferrari.drive();
+// ferrari.drive();
+// console.log(ferrari.currSpeed)
+// ferrari.brake();
+// console.log(ferrari.currSpeed)
+// ferrari.stop();
+// console.log(ferrari.currSpeed)
+
+// console.log(ferrari.name)
+// console.log(ferrari.color)
+// console.log(ferrari.speed)
+// console.log(ferrari.currSpeed)
+// ferrari.drive();
+// ferrari.brake();
+
+//ferrari.zeroTosixty();
+// console.log(ferrari.currSpeed)
+// ferrari.brake();
+// console.log(ferrari.currSpeed)
+
+
+//for second car
+
+const porsche = new Car('Porsche', 'yellow', 250)
+// console.log(porsche.name)
+// console.log(porsche.color)
+// console.log(porsche.speed)
+// // const nums = [1, 2, 3, 4, 5] //for drove five times
+// // nums.forEach(_ => porsche.drive())
+
+
+// porsche.drive(40)
+// //porsche.drive(80)
+// console.log(porsche.currSpeed)
+// porsche.zeroTosixty()
+// porsche.stop()
+// console.log(porsche.currSpeed)
+
+// console.log(ferrari.name)
+
+
+
+const num=[1,2,3]
+num.push(4)
+//console.log(typeof[num])
+
+Array.prototype.myPush = function(item)
+{
+    this[this.length]=item
+    return  this
+    
+}
+const fruits =['banana' , 'apple','strawberry' ,'kiwi']
+console.log(fruits.myPush('cookie'))
+fruits.myPush('mango')
+fruits.myPush('anar')
+fruits.myPush('lichi')
+fruits.myPush('cheery')
+console.log(fruits)
